@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoboRide | Auth</title>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="auth-overlay"></div>
+      
+      <div class="auth-form-wrapper glass-panel animate-fade-in reveal-on-scroll is-visible">
+        <h1 class="text-gradient">RoboRide</h1>
+        
+        <!-- LOGIN FORM -->
+        <div id="login-section" class="animate-fade-in">
+          <p class="text-muted" style="margin-bottom: 2rem; font-family: var(--font-header);">Initialize Interface</p>
+          <form id="loginForm">
+            <div class="form-group" style="text-align: left;">
+              <label>Authentication Token (Email)</label>
+              <input type="email" placeholder="rider@roboride.ai" required>
+            </div>
+            <div class="form-group" style="text-align: left;">
+              <label>Secure Pin</label>
+              <input type="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Connect</button>
+          </form>
+          <p class="text-muted" style="margin-top: 2rem;">New rider? <a href="#" id="show-signup" style="color: var(--primary); font-weight:700;">Establish Profile</a></p>
+        </div>
+
+        <!-- SIGNUP FORM -->
+        <div id="signup-section" style="display: none;" class="animate-fade-in">
+          <p class="text-muted" style="margin-bottom: 2rem; font-family: var(--font-header);">Establish Neuromorphic Profile</p>
+          <form id="signupForm">
+            <div class="form-group" style="text-align: left;">
+              <label>Designation</label>
+              <input type="text" placeholder="Alex Rider" required>
+            </div>
+            <div class="form-group" style="text-align: left;">
+              <label>Communication Node (Email)</label>
+              <input type="email" placeholder="alex@roboride.ai" required>
+            </div>
+            <div class="form-group" style="text-align: left;">
+              <label>Secure Key</label>
+              <input type="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Initialize</button>
+          </form>
+          <p class="text-muted" style="margin-top: 2rem;">Already mapped? <a href="#" id="show-login" style="color: var(--primary); font-weight:700;">Connect Here</a></p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

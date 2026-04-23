@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Complete Catalog | RoboRide</title></head>
+  <body>
+    <div id="navbar-container"></div>
+    <div class="container" style="padding-top:10rem; padding-bottom:5rem;">
+      <h1 class="text-gradient" style="margin-bottom: 0.5rem;">Complete Catalog</h1>
+      <p class="text-muted" style="font-size:1.2rem; margin-bottom: 3rem;">Live inventory access.</p>
+      
+      <!-- We re-use exactly the same dynamic grid container, main.js will populate 20 items. 
+           We use window.dedicatedFilter to force JS to hide everything else instantaneously. -->
+      <div class="product-grid" id="product-grid-container"></div>
+
+    </div>
+    <script>window.dedicatedFilter = "All";</script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

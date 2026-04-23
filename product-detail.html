@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoboRide | Product Detail</title>
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <div class="container" style="padding-top: 10rem; min-height: 100vh;">
+      <div style="display:flex; gap: 4rem; flex-wrap: wrap;">
+        
+        <!-- Image Carousel Simulator -->
+        <div style="flex: 1; min-width: 300px; display:flex; flex-direction:column; gap:1rem;">
+          <div id="mainImage" class="glass-panel" style="height: 450px; background-image: url('https://images.unsplash.com/photo-1620054707641-fc17cdd4dfca?q=80&w=800'); background-size: cover; background-position: center; border-color: var(--primary);"></div>
+          <div style="display:flex; gap: 1rem; height: 100px;">
+             <div id="thumb-1" id="thumb-1" class="glass-panel" style="flex:1; cursor:pointer; background-image: url('https://images.unsplash.com/photo-1620054707641-fc17cdd4dfca?q=80&w=800'); background-size: cover; background-position: center;"></div>
+             <div class="glass-panel" style="flex:1; cursor:pointer; background-image: url('https://images.unsplash.com/photo-1548041530-ba95123dccab?q=80&w=400'); background-size: cover; background-position: center; opacity:0.6;"></div>
+             <div class="glass-panel" style="flex:1; cursor:pointer; background-image: url('https://images.unsplash.com/photo-1616801968050-dfadabef4a70?q=80&w=400'); background-size: cover; background-position: center; opacity:0.6;"></div>
+          </div>
+        </div>
+
+        <!-- Product Data -->
+        <div style="flex: 1; min-width: 300px;">
+          <p class="text-muted" style="text-transform: uppercase; letter-spacing: 2px;"><span id="det-brand">Tesla &#8226; EV Bike</span></p>
+          <h1 id="det-name" class="text-gradient">Tesla CyberMoto</h1>
+          <div style="color:var(--primary); font-size:1.5rem; margin-top:1rem; font-weight:800;">&#9733; <span id="det-rating">4.9 <span style="font-size:1rem; color:var(--text-muted); font-weight:400;">(120 Ratings)</span></div>
+          <h2 id="det-price" style="margin-top: 2rem;">&#8377;8,99,000</h2>
+          
+          <div style="margin-top: 3rem; background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--primary);">
+             <h3 style="margin-bottom: 1rem;">Platform Details</h3>
+             <ul style="color: var(--text-muted); display:flex; flex-direction:column; gap:0.5rem; font-size: 1.1rem; list-style:disc; padding-left:1.5rem;">
+                <li>Self-balancing kinetic chassis</li>
+                <li>500km real-world range estimation</li>
+                <li>Full Voxa AI Integration suite directly into dashboard</li>
+                <li>Level 3 Autonomous Mobility</li>
+             </ul>
+          </div>
+          
+          <div style="margin-top: 3rem;">
+             <a href="/payment.html" class="btn btn-primary" style="padding: 1.5rem 4rem; font-size: 1.2rem; width:100%; max-width:400px; text-align:center;">Buy Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Related Items -->
+      <div style="margin-top: 8rem; margin-bottom: 5rem;">
+         <h2 style="margin-bottom: 3rem;">Related <span class="text-gradient">Fleet</span></h2>
+         <div class="product-grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));">
+            
+            <div class="product-card">
+                <div class="product-img-wrapper"><div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1502744688674-c619d1586c9e?q=80&w=400');"></div></div>
+                <div class="product-info" style="padding: 1.5rem;">
+                    <h3>Ather 450X</h3>
+                    <div class="product-price" style="font-size:1.5rem;">&#8377;1,45,000</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrapper"><div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1606524108873-195b05adbe85?q=80&w=400');"></div></div>
+                <div class="product-info" style="padding: 1.5rem;">
+                    <h3>Ultraviolette F77</h3>
+                    <div class="product-price" style="font-size:1.5rem;">&#8377;3,95,000</div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img-wrapper"><div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1651478546197-09cae5b565e2?q=80&w=400');"></div></div>
+                <div class="product-info" style="padding: 1.5rem;">
+                    <h3>Ola S1 Pro</h3>
+                    <div class="product-price" style="font-size:1.5rem;">&#8377;1,35,000</div>
+                </div>
+            </div>
+
+         </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+    <script>
+       // simple quick toggle logic for carousel
+       document.addEventListener('DOMContentLoaded', () => {
+          const mainImg = document.getElementById('mainImage');
+          const thumbs = document.querySelectorAll('.glass-panel');
+          thumbs.forEach(thumb => {
+             thumb.addEventListener('click', (e) => {
+                if(e.target.id === 'mainImage') return;
+                mainImg.style.backgroundImage = e.target.style.backgroundImage;
+                thumbs.forEach(t => {if(t.id !== 'mainImage') t.style.opacity = '0.6';});
+                e.target.style.opacity = '1';
+             });
+          });
+       });
+    </script>
+  </body>
+</html>
